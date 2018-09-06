@@ -1,0 +1,45 @@
+<!--Générer aléatoirement un nbre compris entre 1 et 100.
+	Limiter le nbr de tentatives à 6.
+	Permetter à  user de proposer des nbres dans une boite de dialogue.
+		comparer la valeur des nbres proposés avec le nbre générer aléatoirement.-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p id="solution"></p>
+	<script type="text/javascript">
+		var solution = Math.floor(Math.random() * 100) + 1;
+		//console.log(solution);
+		//boucle
+		for (var i = 0; i < 6; i++) 
+		{
+			var x = prompt ("Entrez votre proposition :");	
+			console.log(x);
+		//conditions
+		if (x==solution) 
+		{
+			console.log("la réponse est bien " + solution);
+			break;
+		}
+		if (x!=solution) 
+		{
+			if (x<solution) 
+			{
+				console.log("Le nbre que vous avez saisie est trop petit");
+			}
+			else if (x>solution)
+			{
+			 	console.log("Le nbre que vous avez saisie est trop grd");
+			}	 
+		}
+			
+		}
+		if (i==6)
+		{
+			console.log("vous avez perdu");
+		}	
+	</script>
+</body>
+</html>
